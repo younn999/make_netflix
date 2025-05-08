@@ -1,0 +1,41 @@
+/* 전체 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 30px 15px;
+}
+
+/* 왼쪽 부분 */
+.nav_logo_list {
+  display: flex;
+}
+
+.nav_list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.nav_list li {
+  list-style: none;
+}
+
+li:first-child {
+  margin-right: 13px;
+}
+
+.list_item {
+  text-decoration: none;
+  color: white;
+}
+
+.list_item:hover {
+  text-decoration: underline;
+}
+
+/* 오른쪽 부분 */
+button {
+  padding: 5px 10px;
+}

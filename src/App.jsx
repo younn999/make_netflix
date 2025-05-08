@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage/HomePage";
-import MoviePage from "./MoviePage/MoviePage";
-import MovieDetailPage from "./MovieDetailPage/MovieDetailPage";
+import HomePage from "./pages/HomePage/HomePage";
+import MoviePage from "./pages/MoviePage/MoviePage";
+import MovieDetailPage from "./pages/MovieDetailPage/MovieDetailPage";
 import Navigation from "./Navigation/Navigation";
 
 function App() {
