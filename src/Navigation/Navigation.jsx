@@ -1,9 +1,11 @@
 import React from "react";
 import "./Navigation.style.css";
 import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const Navigation = () => {
   return (
+    
     <header>
       <div className="nav_logo_list">
         <div className="nav_logo">
@@ -17,12 +19,12 @@ const Navigation = () => {
         </div>
         <ul className="nav_list">
           <li>
-            <Link to="/" className="list_item">
+            <Link to="/" className="nav_list_item">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/movies" className="list_item">
+            <Link to="/movies" className="nav_list_item">
               Movies
             </Link>
           </li>
@@ -30,9 +32,10 @@ const Navigation = () => {
       </div>
       <form>
         <input type="text" />
-        <button>search</button>
+        <Button variant="danger">Search</Button>
       </form>
     </header>
+    
   );
 };
 

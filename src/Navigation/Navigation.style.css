@@ -22,20 +22,53 @@ header {
   list-style: none;
 }
 
-li:first-child {
-  margin-right: 13px;
-}
-
-.list_item {
+.nav_list_item {
+  padding: 8px 12px;
   text-decoration: none;
   color: white;
 }
 
-.list_item:hover {
-  text-decoration: underline;
+.nav_list_item:hover {
+  background-color: #d63031;
+  border-radius: 5px;
 }
 
 /* 오른쪽 부분 */
-button {
-  padding: 5px 10px;
+form {
+  /* 검색창과 버튼의 줄을 맞추기 위해 */
+  display: flex;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  /* 로고와 메뉴 감싼 박스 */
+  .nav_logo_list {
+    flex-direction: column;
+  }
+
+  /* 메뉴 */
+  .nav_list {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .nav_list li {
+    padding: 15px;
+  }
+
+  /* 검색창과 버튼 */
+  form {
+    position: relative;
+    left: 13px;
+    margin-top: 5px;
+  }
 }
