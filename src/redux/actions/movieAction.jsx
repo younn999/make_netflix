@@ -2,14 +2,32 @@ import api from "../api";
 
 function getMovies() {
   return async (dispatch, getState) => {
-    const popularMovies = await api.get("/movie/popular?language=en-US&page=1");
-    console.log("ppp", popularMovies);
+    const url1 = api.get("/movie/popular?language=en-US&page=1");
+    // console.log("ppp", url1);
+    const url2 = api.get("/movie/top_rated?language=en-US&page=1");
+    // console.log("ttt", url2);
+    const url3 = api.get("/movie/upcoming?language=en-US&page=1");
+    // console.log("uuu", url3);
 
-    const topRatedMovies = await api.get("/movie/top_rated?language=en-US&page=1");
-    console.log("ttt", topRatedMovies);
+    // 서로 연관이 없는 데이터이므로 한꺼번에 불러준다.
+    const [popularApi, topRatedApi, upcomingApi] = await Promise.all([
+      url1,
+      url2,
+      url3,
+    ]);
+    // console.log("popular", popularApi);
+    // console.log("topRated", topRatedApi);
+    // console.log("upcoming", upcomingApi);
 
-    const upcomingMovies = await api.get("/movie/upcoming?language=en-US&page=1");
-    console.log("uuu", upcomingMovies);
+    // movieReducer를 호출한다.
+    dispatch({
+      type: "GET_MOVIES_SUCCESS",
+      payload: {  // 데이터만 뽑아서 reducer로 보낸다.
+        popular: popularApi.data,
+        topRated: topRatedApi.data,
+        upcoming: upcomingApi.data,
+      },
+    });
 
     // const url1 =
     //   "https://api.themoviedb.org/3/movie/popular?api_key=[api_key]&language=en-US&page=1";
